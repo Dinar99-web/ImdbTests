@@ -1,10 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import helpers.Attach;
 import io.qameta.allure.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pages.MainPage;
 import pages.SearchResultsPage;
 import pages.SignInPage;
@@ -13,6 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 @Epic("IMDb Tests")
 @Feature("Поиск и навигация по IMDb")
+@Tag("imdb")
 public class ImdbTests {
     private MainPage mainPage = new MainPage();
     private SearchResultsPage searchResultsPage = new SearchResultsPage();
