@@ -1,59 +1,67 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.MainPage;
+import pages.SearchResultsPage;
+import pages.SignInPage;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.open;
 
+@Epic("IMDb Tests")
+@Feature("Поиск и навигация по IMDb")
 public class ImdbTests {
+    private MainPage mainPage = new MainPage();
+    private SearchResultsPage searchResultsPage = new SearchResultsPage();
+    private SignInPage signInPage = new SignInPage();
+
     @BeforeAll
     static void BrowserSetup() {
-        Configuration.baseUrl = "https://s.media-imdb.com/";
+        Configuration.baseUrl = "https://www.imdb.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
     }
+
     @Test
     @DisplayName("Поиск фильма по названию")
-    void searchImdbFilmTest(){
-        open("https://s.media-imdb.com/");
-        $("#suggestion-search").setValue("Interstellar").pressEnter();
-        $$("a.ipc-metadata-list-summary-item__t").findBy(text("Интерстеллар"))
-                .shouldBe(visible);
+    void searchImdbFilmTest() {
+        open("/");
+        mainPage.searchFor("Interstellar");
+        searchResultsPage.checkResultContains("Interstellar");
     }
+
     @Test
     @DisplayName("Проверка названия поля виджета")
-    void widgetTextTest(){
-        open("https://s.media-imdb.com/");
-        $("#imdbHeader-navDrawerOpen").click();
-        $("span.navlinkcat__itemTitle")
-                .shouldBe(visible)
-                .shouldHave(Condition.text("Movies"));
+    void widgetTextTest() {
+        mainPage.openMainPage();
+        mainPage.openNavigationMenu();
+        mainPage.checkMoviesMenuItem();
     }
+
     @Test
-    @DisplayName("Способы аутинтификации")
-    void checkinVariantsTest(){
+    @DisplayName("Способы аутентификации")
+    void checkinVariantsTest() {
         open("https://s.media-imdb.com/registration/signin");
-        $$("a.list-group-item").findBy(text("Sign in with IMDb")).click();
-        $("img[alt='IMDb.com logo']").shouldBe(visible);
+        signInPage.selectSignInOption("Sign in with IMDb");
+        signInPage.checkLogoIsVisible();
     }
+
     @Test
     @DisplayName("Поиск по ключевому слову")
-    void keyWordSearchTest(){
-        open("https://s.media-imdb.com/");
-        $("[data-testid=category-selector-button]").click();
-        $$(".ipc-list-item__text").findBy(exactText("Keywords")).click();
-        $("#suggestion-search").setValue("comedy").pressEnter();
-        $("a.ipc-metadata-list-summary-item__t").shouldHave(text("comedy"));
+    void keyWordSearchTest() {
+        mainPage.openMainPage();
+        mainPage.selectSearchCategory("Keywords");
+        mainPage.searchFor("comedy");
+        searchResultsPage.checkResultsContain("comedy");
     }
+
     @Test
     @DisplayName("Поиск по актеру")
-    void actorSearchTest(){
-        open("https://s.media-imdb.com/");
-        $("[data-testid=category-selector-button]").click();
-        $$(".ipc-list-item__text").findBy(exactText("Celebs")).click();
-        $("#suggestion-search").setValue("mickey rourke").pressEnter();
-        $("a.ipc-metadata-list-summary-item__t").shouldHave(text("rourke"));
+    void actorSearchTest() {
+        mainPage.openMainPage();
+        mainPage.selectSearchCategory("Celebs");
+        mainPage.searchFor("mickey rourke");
+        searchResultsPage.checkResultsContain("rourke");
     }
 }
