@@ -34,7 +34,7 @@ public class ImdbTests {
 
     }
     @AfterEach
-    void addAttachments() {
+    void addAttachents() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
