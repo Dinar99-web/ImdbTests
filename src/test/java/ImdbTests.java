@@ -20,7 +20,7 @@ public class ImdbTests {
     private SignInPage signInPage = new SignInPage();
 
     @BeforeAll
-    static void BrowserSetup() {
+    static void browserSetup() {
         Configuration.baseUrl = "https://www.imdb.com";
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 10000;
