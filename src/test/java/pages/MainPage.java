@@ -8,7 +8,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class MainPage extends BasePage {
+public class MainPage {
     private ElementsCollection menuItems = $$(".ipc-list-item__text");
     private SelenideElement moviesMenuItem = $("[data-testid=category-expando]");
     private SelenideElement menuButton = $(".ipc-responsive-button__text");
