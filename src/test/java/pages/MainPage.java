@@ -40,4 +40,5 @@ public class MainPage {
     @Step("Открыть главную страницу IMDb")
     public void openMainPage() {
         Selenide.open("/");
+    }
 }
