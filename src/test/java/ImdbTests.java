@@ -23,7 +23,6 @@ public class ImdbTests {
 
     @BeforeAll
     static void browserSetup() {
-        // Добавляем Allure Listener для Selenide
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(true)
