@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
@@ -6,6 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
 import pages.SearchResultsPage;
 import pages.SignInPage;
+import io.qameta.allure.selenide.AllureSelenide;
 
 import java.util.Map;
 
@@ -21,6 +23,12 @@ public class ImdbTests {
 
     @BeforeAll
     static void browserSetup() {
+        // Добавляем Allure Listener для Selenide
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true)
+        );
+
         Configuration.baseUrl = "https://www.imdb.com";
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 10000;
@@ -31,7 +39,6 @@ public class ImdbTests {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-
     }
     @AfterEach
     void addAttachents() {
