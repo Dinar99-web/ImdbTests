@@ -67,7 +67,7 @@ public class ImdbTests {
     @DisplayName("Проверка способов аутентификации")
     void checkinVariantsTest() {
         open("https://s.media-imdb.com/registration/signin");
-        signInPage.selectSignInOption("Sign in with IMDb");
+        signInPage.selectSignInOption();
         signInPage.checkLogoIsVisible();
     }
 
