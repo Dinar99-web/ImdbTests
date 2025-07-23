@@ -96,4 +96,12 @@ public class ImdbTests {
         mainPage.searchFor("marvel");
         searchResultsPage.checkResultsContain("marvel");
     }
+    @Test
+    @DisplayName("Поиск сериалов")
+    void tvEpisodesSearchTest(){
+        mainPage.openMainPage();
+        mainPage.selectSearchCategory("TV episodes");
+        mainPage.searchFor("Boondocks");
+        searchResultsPage.checkResultsContain("Boondocks");
+    }
 }
