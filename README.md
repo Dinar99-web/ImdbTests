@@ -40,6 +40,8 @@ ____
 - ✓ *Проверка способов аутентификации*
 - ✓ *Поиск по ключевому слову*
 - ✓ *Поиск по актеру*
+- ✓ *Поиск по компании*
+- ✓ *Поиск сериалов*
 
 
 ____
@@ -47,7 +49,7 @@ ____
 ## <img alt="Jenkins" height="25" src="media/jenkins-original.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/)</a>
 ____
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/"><img src="media/jenkins_report.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/"><img src="media/jenkins1.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
@@ -67,13 +69,13 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/allure-report.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/allure1.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="media/allure-report2.png" width="850">  
+<img title="Allure Tests" src="media/allure2.png" width="850">  
 </p>
 
 ___ 
@@ -83,10 +85,10 @@ ____
 ## <img alt="Allure" height="25" src="media/icons8-телеграм.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 ____
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/telegram_report.png" width="550">  
+<img title="Allure Overview Dashboard" src="media/telegram1.png" width="550">  
 
 ## <img alt="Selenoid" height="25" src="media/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
 ____
 <p align="center">
-<img title="Selenoid Video" src="media/57021f5521a9e0d1d36c8188061fb479.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/video.gif" width="550" height="350"  alt="video">   
 </p>
