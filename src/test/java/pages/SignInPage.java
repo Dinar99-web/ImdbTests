@@ -7,13 +7,12 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SignInPage {
-    // Ищем элемент по data-testid
     private SelenideElement imdbSignInOption = $("[data-testid='sign_in_option_IMDB']");
     private SelenideElement logo = $("img[alt='IMDb.com logo']");
 
     @Step("Выбрать способ входа через IMDb")
     public void selectSignInOption() {
-        imdbSignInOption.click(); // Клик по элементу с data-testid
+        imdbSignInOption.click();
     }
 
     @Step("Проверить отображение логотипа")

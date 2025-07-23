@@ -88,4 +88,12 @@ public class ImdbTests {
         mainPage.searchFor("mickey rourke");
         searchResultsPage.checkResultsContain("rourke");
     }
+    @Test
+    @DisplayName("Поиск по компании")
+    void companySearchTest(){
+        mainPage.openMainPage();
+        mainPage.selectSearchCategory("Companies");
+        mainPage.searchFor("marvel");
+        searchResultsPage.checkResultsContain("marvel");
+    }
 }
