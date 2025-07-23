@@ -40,11 +40,13 @@ ____
 - ✓ *Проверка способов аутентификации*
 - ✓ *Поиск по ключевому слову*
 - ✓ *Поиск по актеру*
+- ✓ *Поиск по компании*
+- ✓ *Поиск сериалов*
 
 
 ____
 <a id="jenkins"></a>
-## <img alt="Jenkins" height="25" src="media/jenkins-original.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/)</a>
+## <img alt="Jenkins" height="25" src="media/jenkins1.png" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/)</a>
 ____
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/"><img src="media/jenkins_report.png" alt="Jenkins" width="950"/></a>  
