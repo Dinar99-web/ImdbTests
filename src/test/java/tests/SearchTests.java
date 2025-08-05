@@ -10,7 +10,7 @@ import pages.SearchResultsPage;
 @Epic("IMDb Web Application")
 @Feature("Поиск контента")
 @Story("Поиск фильмов, актеров, компаний")
-@Tag("search")
+@Tag("imdb")
 public class SearchTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();

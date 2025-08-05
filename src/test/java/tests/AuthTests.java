@@ -9,7 +9,7 @@ import pages.SignInPage;
 @Epic("IMDb Web Application")
 @Feature("Авторизация")
 @Story("Проверка способов входа")
-@Tag("auth")
+@Tag("imdb")
 public class AuthTests extends BaseTest {
     private final SignInPage signInPage = new SignInPage();
 

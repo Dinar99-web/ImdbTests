@@ -9,7 +9,7 @@ import pages.MainPage;
 @Epic("IMDb Web Application")
 @Feature("Навигация по сайту")
 @Story("Проверка меню и виджетов")
-@Tag("navigation")
+@Tag("imdb")
 public class NavigationTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
 
