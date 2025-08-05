@@ -63,7 +63,7 @@ ____
 
 ___
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="media/Allure_Report.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/ImdbTests/3/allure/)</a>
+## <img alt="Allure" height="25" src="media/Allure_Report.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/035-ducking_duck_imdb_tests/allure/)</a>
 ___
 
 ### *Основная страница отчёта*
