@@ -10,16 +10,16 @@ import pages.MainPage;
 @Feature("Навигация по сайту")
 @Story("Проверка меню и виджетов")
 @Tag("imdb")
+@Owner("Dinar Aminev")
 public class NavigationTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
 
     @Test
     @DisplayName("Проверка названия поля виджета 'Movies'")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.MINOR)
     void widgetTextTest() {
-        mainPage.openMainPage();
-        mainPage.openNavigationMenu();
-        mainPage.checkMoviesMenuItem();
+        mainPage.openMainPage()
+                .openNavigationMenu()
+                .checkMoviesMenuItem();
     }
 }

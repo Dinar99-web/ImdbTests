@@ -16,29 +16,34 @@ public class MainPage {
     private SelenideElement categorySelector = $(".ipc-btn--core-base");
 
     @Step("Поиск по запросу: {query}")
-    public void searchFor(String query) {
+    public MainPage searchFor(String query) {
         $(".imdb-header-search__input").setValue(query).pressEnter();
+        return this;
     }
 
     @Step("Выбрать категорию поиска: {category}")
-    public void selectSearchCategory(String category) {
+    public MainPage selectSearchCategory(String category) {
         categorySelector.click();
         menuItems.findBy(Condition.exactText(category)).click();
+        return this;
     }
 
     @Step("Открыть меню навигации")
-    public void openNavigationMenu() {
+    public MainPage openNavigationMenu() {
         menuButton.click();
+        return this;
     }
 
     @Step("Проверить наличие пункта меню 'Movies'")
-    public void checkMoviesMenuItem() {
+    public MainPage checkMoviesMenuItem() {
         moviesMenuItem.shouldBe(Condition.visible)
                 .shouldHave(Condition.text("Movies"));
+        return this;
     }
 
     @Step("Открыть главную страницу IMDb")
-    public void openMainPage() {
+    public MainPage openMainPage() {
         Selenide.open("/");
+        return this;
     }
 }

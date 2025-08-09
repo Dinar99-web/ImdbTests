@@ -10,16 +10,16 @@ import pages.SignInPage;
 @Feature("Авторизация")
 @Story("Проверка способов входа")
 @Tag("imdb")
+@Owner("Dinar Aminev")
 public class AuthTests extends BaseTest {
     private final SignInPage signInPage = new SignInPage();
 
     @Test
     @DisplayName("Проверка способов аутентификации")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.CRITICAL)
-    void checkSignInOptions() {
-        signInPage.openSignInPage();
-        signInPage.selectSignInOption();
-        signInPage.checkLogoIsVisible();
+    void checkSignInOptionsTest() {
+        signInPage.openSignInPage()
+                .selectSignInOption()
+                .checkLogoIsVisible();
     }
 }

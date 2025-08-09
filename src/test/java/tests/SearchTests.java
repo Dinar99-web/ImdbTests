@@ -11,61 +11,57 @@ import pages.SearchResultsPage;
 @Feature("Поиск контента")
 @Story("Поиск фильмов, актеров, компаний")
 @Tag("imdb")
+@Owner("Dinar Aminev")
 public class SearchTests extends BaseTest {
     private final MainPage mainPage = new MainPage();
     private final SearchResultsPage searchResultsPage = new SearchResultsPage();
 
     @Test
     @DisplayName("Поиск фильма по названию")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.CRITICAL)
     void searchFilmTest() {
-        mainPage.openMainPage();
-        mainPage.searchFor("Interstellar");
+        mainPage.openMainPage()
+                .searchFor("Interstellar");
         searchResultsPage.checkResultContains("Interstellar");
     }
 
     @Test
     @DisplayName("Поиск по ключевому слову")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.NORMAL)
     void keyWordSearchTest() {
-        mainPage.openMainPage();
-        mainPage.selectSearchCategory("Keywords");
-        mainPage.searchFor("comedy");
+        mainPage.openMainPage()
+                .selectSearchCategory("Keywords")
+                .searchFor("comedy");
         searchResultsPage.checkResultsContain("comedy");
     }
 
     @Test
     @DisplayName("Поиск по актеру")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.NORMAL)
     void actorSearchTest() {
-        mainPage.openMainPage();
-        mainPage.selectSearchCategory("Celebs");
-        mainPage.searchFor("mickey rourke");
+        mainPage.openMainPage()
+                .selectSearchCategory("Celebs")
+                .searchFor("mickey rourke");
         searchResultsPage.checkResultsContain("rourke");
     }
 
     @Test
     @DisplayName("Поиск по компании")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.NORMAL)
     void companySearchTest() {
-        mainPage.openMainPage();
-        mainPage.selectSearchCategory("Companies");
-        mainPage.searchFor("marvel");
+        mainPage.openMainPage()
+                .selectSearchCategory("Companies")
+                .searchFor("marvel");
         searchResultsPage.checkResultsContain("marvel");
     }
 
     @Test
     @DisplayName("Поиск сериалов")
-    @Owner("Dinar Aminev")
     @Severity(SeverityLevel.NORMAL)
     void tvEpisodesSearchTest() {
-        mainPage.openMainPage();
-        mainPage.selectSearchCategory("TV episodes");
-        mainPage.searchFor("Boondocks");
+        mainPage.openMainPage()
+                .selectSearchCategory("TV episodes")
+                .searchFor("Boondocks");
         searchResultsPage.checkResultsContain("Boondocks");
     }
 }
